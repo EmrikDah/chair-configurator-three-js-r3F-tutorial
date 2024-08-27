@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-const chairColors = [
+const cabinetColors = [
   {
     color: "#683434",
     name: "brown",
@@ -35,7 +35,7 @@ const chairColors = [
   },
 ];
 
-const cushionColors = [
+const drawerColors = [
   {
     color: "#683434",
     name: "brown",
@@ -73,24 +73,18 @@ const cushionColors = [
 const CustomizationContext = createContext({});
 
 export const CustomizationProvider = (props) => {
-  const [material, setMaterial] = useState("leather");
-  const [legs, setLegs] = useState(1);
-  const [chairColor, setChairColor] = useState(chairColors[0]);
-  const [cushionColor, setCushionColor] = useState(cushionColors[0]);
+  const [cabinetColor, setCabinetColor] = useState(cabinetColors[0]);
+  const [drawerColor, setDrawerColor] = useState(drawerColors[0]);
 
   return (
     <CustomizationContext.Provider
       value={{
-        material,
-        setMaterial,
-        legs,
-        setLegs,
-        chairColors,
-        chairColor,
-        setChairColor,
-        cushionColors,
-        cushionColor,
-        setCushionColor,
+        cabinetColors,
+        cabinetColor,
+        setCabinetColor,
+        drawerColors,
+        drawerColor,
+        setDrawerColor,
       }}
     >
       {props.children}
